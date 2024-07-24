@@ -4,21 +4,12 @@ const { ethers } = require("hardhat");
 describe("Add", function () {
     let Add;
     let owner;
-    let addLibrary;
 
     beforeEach(async function () {
         [owner] = await ethers.getSigners();
-        
-        const AddLibrary = await ethers.getContractFactory("AddLibrary");
-        addLibrary = await AddLibrary.deploy();
-        const address = await addLibrary.getAddress();
 
-        const AddContract = await ethers.getContractFactory("Add", {
-            libraries: {
-                AddLibrary: address
-                }
-        });
-
+        //It does not deploy the library because it has an internal function
+        const AddContract = await ethers.getContractFactory("Add");
         Add = await AddContract.deploy();
     });
 

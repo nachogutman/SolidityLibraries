@@ -9,6 +9,7 @@ describe("Points", function () {
     beforeEach(async function () {
         [owner] = await ethers.getSigners();
         
+        //It deploys the library because it has an external function
         const PointsLibrary = await ethers.getContractFactory("PointsLibrary");
         pointsLibrary = await PointsLibrary.deploy();
         const Address = await pointsLibrary.getAddress();
