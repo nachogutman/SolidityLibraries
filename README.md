@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# Solidity Libraries
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This repository demonstrates the power and flexibility of Solidity libraries through practical examples and comprehensive tests, aiming to provide a clear understanding of creating, implementing, and testing libraries in Ethereum smart contract development.
 
-Try running some of the following tasks:
+### How to Use
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run tests: `npx hardhat test`
+4. Explore the `contracts/` directory for examples
+5. Check `test/` for comprehensive test cases
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
