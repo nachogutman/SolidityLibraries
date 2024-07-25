@@ -2,7 +2,7 @@
 pragma solidity ^0.8.9;
 
 
-library MixedLibrary {
+library MathOperationsLibrary {
 
     //The add function (internal) is compiled into the Mixed contract's bytecode.
     function add(uint a, uint b) internal pure returns (uint){

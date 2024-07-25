@@ -1,30 +1,30 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Mixed", function () {
-    let mixed;
+describe("MathOperations", function () {
+    let mathOperations;
     let owner;
     let mixedLibrary;
 
     beforeEach(async function () {
         [owner] = await ethers.getSigners();
-        const MixedLibrary = await ethers.getContractFactory("MixedLibrary");
-        mixedLibrary = await MixedLibrary.deploy();
-        const Address = await mixedLibrary.getAddress();
+        const MathOperationsLibrary = await ethers.getContractFactory("MathOperationsLibrary");
+        mathOperationsLibrary = await MathOperationsLibrary.deploy();
+        const Address = await mathOperationsLibrary.getAddress();
 
-        const MixedContract = await ethers.getContractFactory("Mixed", {
+        const MathOperationsContract = await ethers.getContractFactory("MathOperations", {
             libraries: {
-                MixedLibrary: Address
+                MathOperationsLibrary: Address
                 }
         });
 
-        mixed = await MixedContract.deploy();
+        mathOperations = await MathOperationsContract.deploy();
     });
 
     it("Should add a + b", async function () {
         const a = 1;
         const b = 2;
-        const res = await mixed.add(a, b);
+        const res = await mathOperations.add(a, b);
 
         expect(res).to.equal(3);
     });
@@ -32,8 +32,9 @@ describe("Mixed", function () {
     it("Should divide a + b", async function () {
         const a = 4;
         const b = 2;
-        const res = await mixed.divide(a, b);
+        const res = await mathOperations.divide(a, b);
 
         expect(res).to.equal(2);
     });
 });
+
