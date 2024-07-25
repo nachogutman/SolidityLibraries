@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("Points", function () {
-    let Points;
+    let points;
     let owner;
     let pointsLibrary;
 
@@ -20,11 +20,11 @@ describe("Points", function () {
                 }
         });
 
-        Points = await PointsContract.deploy();
+        points = await PointsContract.deploy();
     });
 
     it("Should add points to player[0]", async function () {
-        await Points.foo(912);
-        expect(await Points.players(0)).to.equal(912);
+        await points.foo(912);
+        expect(await points.players(0)).to.equal(912);
     });
 });

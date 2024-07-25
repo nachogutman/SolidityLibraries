@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("Add", function () {
-    let Add;
+    let add;
     let owner;
 
     beforeEach(async function () {
@@ -10,13 +10,13 @@ describe("Add", function () {
 
         //It does not deploy the library because it has an internal function
         const AddContract = await ethers.getContractFactory("Add");
-        Add = await AddContract.deploy();
+        add = await AddContract.deploy();
     });
 
     it("Should add a + b", async function () {
         const a = 1;
         const b = 2;
-        const res = await Add.add(a, b);
+        const res = await add.add(a, b);
 
         expect(res).to.equal(3);
     });

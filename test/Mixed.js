@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("Mixed", function () {
-    let Mixed;
+    let mixed;
     let owner;
     let mixedLibrary;
 
@@ -18,13 +18,13 @@ describe("Mixed", function () {
                 }
         });
 
-        Mixed = await MixedContract.deploy();
+        mixed = await MixedContract.deploy();
     });
 
     it("Should add a + b", async function () {
         const a = 1;
         const b = 2;
-        const res = await Mixed.add(a, b);
+        const res = await mixed.add(a, b);
 
         expect(res).to.equal(3);
     });
@@ -32,7 +32,7 @@ describe("Mixed", function () {
     it("Should divide a + b", async function () {
         const a = 4;
         const b = 2;
-        const res = await Mixed.divide(a, b);
+        const res = await mixed.divide(a, b);
 
         expect(res).to.equal(2);
     });
